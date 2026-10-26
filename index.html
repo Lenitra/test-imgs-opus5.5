@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbital Frontiers Technologies — Nous veillons sur vous</title>
+  <meta name="description" content="Innovation spatiale, solutions avancées et regard insistant depuis l’orbite basse.">
+  <link rel="icon" id="favicon" type="image/jpeg" href="Gemini_Generated_Image_9hmils9hmils9hmi.jpg">
+  <link rel="apple-touch-icon" href="Gemini_Generated_Image_9hmils9hmils9hmi.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <div id="reticle" aria-hidden="true">
+    <div class="ret-ring"></div>
+    <div class="ret-cross"></div>
+    <span class="ret-label" id="retLabel">LAT 00.00° · LON 00.00°</span>
+  </div>
+
+  <header class="topbar">
+    <a class="logo" href="#top">
+      <span class="logo-mark"><img src="Gemini_Generated_Image_9hmils9hmils9hmi.jpg" alt=""></span>
+      <span>Orbital Frontiers<small>Technologies</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#mission">Mission</a>
+      <a href="#dossier">Votre dossier</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#fondateur">Fondateur</a>
+      <a href="#carrieres">Carrières</a>
+      <a href="espace-client.html">Espace client</a>
+    </nav>
+    <div class="live-pill"><span class="dot"></span><span class="long">Vous êtes en direct</span><span class="short">Live</span></div>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-frame">
+        <img src="Gemini_Generated_Image_5p38845p38845p38.jpg" alt="Orbital Frontiers Technologies — Innovation spatiale et solutions avancées. Rejoignez la nouvelle ère de l’exploration spatiale.">
+        <div class="scanline"></div>
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="hud hud-tl"><span class="rec">● REC</span> CAM-07 // ORBITE BASSE</div>
+        <div class="hud hud-tr" id="heroClock">--/--/---- --:--:--</div>
+        <div class="hud hud-bl" id="heroCoords">LAT 43.19°N · LON 3.07°E · ALT 21 430 km</div>
+        <div class="hud hud-br">SIGNAL ▮▮▮▮▯ · CHIFFREMENT : NON</div>
+      </div>
+    </div>
+
+    <!-- MISSION -->
+    <section class="intro" id="mission">
+      <p class="kicker">// Mission statement v42.0 — validé par 0 comité d’éthique</p>
+      <h1>Nous ne regardons pas les étoiles.<br><span class="accent">Ce sont les étoiles qui vous regardent.</span></h1>
+      <p class="buzz">Leader mondial de <span class="buzzword" id="buzzword">la synergie orbitale disruptive</span></p>
+      <div class="ctas">
+        <button class="btn primary" id="joinBtn">Rejoindre la nouvelle ère</button>
+        <button class="btn ghost flee" id="fleeBtn">Non merci</button>
+      </div>
+    </section>
+
+    <!-- DOSSIER -->
+    <section class="dossier" id="dossier">
+      <div class="section-head">
+        <p class="kicker">// Dossier n° <span id="caseId">OF-000000</span> · Classification : très personnel</p>
+        <h2>Ce que nous savons déjà de vous</h2>
+        <p class="lead">Rassurez-vous : ces informations restent strictement entre vous, nous, et nos 847 partenaires de confiance.</p>
+      </div>
+      <div class="dossier-grid">
+        <div class="terminal">
+          <div class="term-bar"><i></i><i></i><i></i><span>regard-intense@sat-84:~</span></div>
+          <div class="term-body" id="term" aria-live="polite"></div>
+        </div>
+        <aside class="threat">
+          <h3>Niveau de menace</h3>
+          <svg class="gauge" viewBox="0 0 200 112" aria-hidden="true">
+            <path class="g-track" d="M15 100 A85 85 0 0 1 185 100" pathLength="100"/>
+            <path class="g-fill" id="gFill" d="M15 100 A85 85 0 0 1 185 100" pathLength="100"/>
+          </svg>
+          <div class="g-value"><b id="gValue">12</b><small>%</small><span id="gLabel">Inoffensif·ve</span></div>
+          <ul class="live-stats">
+            <li><span>Temps passé ici</span><b id="sTime">0 s</b></li>
+            <li><span>Distance parcourue par votre souris</span><b id="sDist">0 cm</b></li>
+            <li><span>Progression vers l’orbite géostationnaire</span><b id="sOrbit">0 %</b></li>
+            <li><span>Clics archivés</span><b id="sClicks">0</b></li>
+            <li><span>Tentatives de fuite (onglet)</span><b id="sEscapes">0</b></li>
+            <li><span>Page lue</span><b id="sScroll">0 %</b></li>
+          </ul>
+          <div class="threat-actions">
+            <button class="btn small primary" id="camBtn">📷 Activer la caméra (expérience immersive)</button>
+            <button class="btn small ghost" id="dlBtn">⬇ Télécharger mon dossier (4,2 To)</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat"><b data-count="12847">0</b><span>satellites en orbite<small>dont 3 en Lego</small></span></div>
+      <div class="stat wide"><b data-count="8000000001" id="humans">0</b><span>humains observés<small>vous compris</small></span></div>
+      <div class="stat"><b data-count="0">0</b><span>fuite de données<small>nous avons tout gardé</small></span></div>
+      <div class="stat"><b>∞</b><span>cafés consommés<small>par le fondateur</small></span></div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="solutions" id="solutions">
+      <div class="section-head">
+        <p class="kicker">// Catalogue 2026 · Non contractuel · Non éthique</p>
+        <h2>Des solutions avancées pour des problèmes que vous n’aviez pas</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-top"><span class="code">OF-01</span><span class="badge">Best-seller</span></div>
+          <div class="icon">🛰️</div>
+          <h3>SatStalk™ Pro</h3>
+          <p>La surveillance <em>as a service</em>. Sachez ce que fait votre voisin, en 8K, depuis 36 000 km. Spoiler : il vous regarde aussi.</p>
+          <div class="card-foot"><span class="price">Sur devis (et sur votre âme)</span><button class="more">En savoir plus →</button></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="code">OF-02</span><span class="badge">Nouveau</span></div>
+          <div class="icon">☁️</div>
+          <h3>OrbitCloud™</h3>
+          <p>Le cloud, mais vraiment au-dessus des nuages. 99,9 % de disponibilité, 0,1 % de risque que vos fichiers retombent sur Clermont-Ferrand.</p>
+          <div class="card-foot"><span class="price">9,99 €/mois + frais de rentrée atmosphérique</span><button class="more">En savoir plus →</button></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="code">OF-03</span><span class="badge">Bio</span></div>
+          <div class="icon">🐦</div>
+          <h3>PigeonCam™</h3>
+          <p>Notre flotte de 40 millions de pigeons équipés de capteurs 4K. Ils ne sont pas réels. Ils ne l’ont jamais été.</p>
+          <div class="card-foot"><span class="price">Graines non incluses</span><button class="more">En savoir plus →</button></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="code">OF-04</span><span class="badge">Web 4.0</span></div>
+          <div class="icon">🔮</div>
+          <h3>Quantum Blockchain Telescope</h3>
+          <p>Personne ne sait ce que c’est. Nos investisseurs non plus. Levée de fonds : 400 M€. Merci à eux.</p>
+          <div class="card-foot"><span class="price">Disponible en NFT</span><button class="more">En savoir plus →</button></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="code">OF-05</span><span class="badge">Écolo</span></div>
+          <div class="icon">🌙</div>
+          <h3>AdBlock Lunaire</h3>
+          <p>Nous bloquons toutes les publicités de votre écran pour les projeter directement sur la Lune. Visible les soirs de pleine lune.</p>
+          <div class="card-foot"><span class="price">Gratuit (la Lune paie)</span><button class="more">En savoir plus →</button></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><span class="code">OF-06</span><span class="badge">Bêta</span></div>
+          <div class="icon">🌦️</div>
+          <h3>Météo PréCrime™</h3>
+          <p>Prévisions à 7 jours de votre humeur. Demain : 70 % de risque de râler, éclaircies vers 18 h, averses de mauvaise foi le lundi.</p>
+          <div class="card-foot"><span class="price">Inclus dans votre dossier</span><button class="more">En savoir plus →</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FONDATEUR -->
+    <section class="founder" id="fondateur">
+      <div class="radar" id="radar">
+        <div class="orbit-ring"></div>
+        <div class="pulse"></div>
+        <div class="photo">
+          <img src="Gemini_Generated_Image_9hmils9hmils9hmi.jpg" alt="Le fondateur d’Orbital Frontiers Technologies, sous surveillance satellite">
+          <div class="sweep"></div>
+        </div>
+        <span class="tag tag-top">SUJET : LE VISIONNAIRE</span>
+        <span class="tag tag-lock">CIBLE IDENTIFIÉE ✓</span>
+      </div>
+      <div class="founder-text">
+        <p class="kicker">// Fondateur · PDG · Astronaute autoproclamé</p>
+        <h2>Le Visionnaire</h2>
+        <blockquote>« Un jour, j’ai levé les yeux vers les étoiles. Elles m’ont regardé en retour. Alors je leur ai mis des caméras. »</blockquote>
+        <dl class="facts">
+          <dt>Altitude habituelle</dt><dd>21 430 km (au-dessus de tout le monde)</dd>
+          <dt>Heures de sommeil</dt><dd>0 — il dort en orbite géostationnaire</dd>
+          <dt>Diplômes</dt><dd>Master en Regard Intense, doctorat d’astrophysique (YouTube)</dd>
+          <dt>Barbe</dt><dd>Taillée par satellite, précision ±0,2 mm</dd>
+          <dt>Clignements d’yeux</dt><dd>Aucun depuis 2019</dd>
+          <dt>Statut</dt><dd class="ok">NOMINAL</dd>
+        </dl>
+        <button class="btn primary" id="stareBtn">Soutenir son regard</button>
+        <p class="stare-out mono" id="stareOut" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- TEMOIGNAGES -->
+    <section class="testimonials" id="temoignages">
+      <div class="section-head">
+        <p class="kicker">// Avis clients · 100 % authentiques · 100 % surveillés</p>
+        <h2>Ils nous font confiance (ils n’ont pas le choix)</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <div class="stars">★★★★★</div>
+          <p>« Depuis qu’Orbital Frontiers me surveille, je ne me sens plus jamais seul. Même sous la douche. »</p>
+          <figcaption>Gérard, 54 ans · observé depuis 2019</figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars">★★★★★</div>
+          <p>« J’ai perdu mes clés. Ils m’ont appelée pour me dire où elles étaient. Je n’avais prévenu personne. »</p>
+          <figcaption>Sandrine, 38 ans · observée depuis 2021</figcaption>
+        </figure>
+        <figure class="quote" id="doomed">
+          <div class="stars">★☆☆☆☆</div>
+          <p>« Franchement, je trouve ça un peu flippant qu’ils sachent ce que j’ai mangé ce midi et qu’ils… »</p>
+          <figcaption>Kevin, 27 ans · client mécontent</figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars">★★★★★</div>
+          <p>« Je ne suis pas un pigeon. »</p>
+          <figcaption>Bernard · pigeon (non)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CARRIERES -->
+    <section class="careers" id="carrieres">
+      <div class="section-head">
+        <p class="kicker">// Nous recrutons · Nous savons déjà que vous postulerez</p>
+        <h2>Rejoignez l’équipage</h2>
+      </div>
+      <ul class="jobs">
+        <li class="job">
+          <div><h3>Stagiaire Observateur·ice d’Étoiles</h3><p>CDI (Contrat à Durée Interstellaire) · Rémunéré en visibilité orbitale</p></div>
+          <button class="btn small apply">Postuler</button>
+        </li>
+        <li class="job">
+          <div><h3>Chief Staring Officer</h3><p>Prérequis : ne pas cligner des yeux pendant 8 h · Télétravail en orbite</p></div>
+          <button class="btn small apply">Postuler</button>
+        </li>
+        <li class="job">
+          <div><h3>Ingénieur·e Pigeon Senior</h3><p>5 ans d’expérience en ornithologie robotique · Nid de fonction</p></div>
+          <button class="btn small apply">Postuler</button>
+        </li>
+        <li class="job dead">
+          <div><h3>Responsable Éthique</h3><p>Poste supprimé · Jugé non nécessaire par le comité</p></div>
+          <button class="btn small" disabled>Poste supprimé</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="news-card">
+        <p class="kicker">// Newsletter orbitale</p>
+        <h2>Restez informé·e. Nous, on l’est déjà.</h2>
+        <form class="news-form" id="newsForm" novalidate>
+          <input type="email" id="newsEmail" placeholder="votre@email.com (on l’a déjà)" aria-label="Adresse e-mail" autocomplete="off">
+          <button class="btn primary" type="submit">S’abonner</button>
+        </form>
+        <p class="news-out mono" id="newsOut" aria-live="polite"></p>
+        <button class="btn small ghost flee" id="unsubBtn" type="button">Se désabonner</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div>
+        <a class="logo" href="#top">
+          <span class="logo-mark big"><img src="Gemini_Generated_Image_9hmils9hmils9hmi.jpg" alt=""></span>
+          <span>Orbital Frontiers<small>Technologies</small></span>
+        </a>
+        <p class="muted">Innovation spatiale, solutions avancées et regard insistant depuis 2019.</p>
+      </div>
+      <div class="foot-links">
+        <a class="link" href="espace-client.html">Espace client</a>
+        <button class="link" data-troll="legal">Mentions légales (surveillées)</button>
+        <button class="link" data-troll="privacy">Politique de confidentialité</button>
+        <button class="link" data-troll="cgu">CGU</button>
+        <button class="btn small ghost" id="gravBtn">Désactiver la gravité</button>
+      </div>
+    </div>
+    <p class="fine">© 2026 Orbital Frontiers Technologies — Tous droits réservés, les vôtres aussi.<br>
+      Ce site est une parodie. Aucun pigeon n’a été blessé et aucune donnée ne quitte votre navigateur. Mais avouez que vous avez eu un doute.</p>
+  </footer>
+
+  <div class="cookie" id="cookie" role="dialog" aria-label="Cookies">
+    <p>🍪 Ce site utilise des cookies, des satellites et un pigeon nommé Bernard. En continuant votre navigation, vous acceptez d’être regardé·e fixement.</p>
+    <div class="cookie-actions">
+      <button class="btn small primary" data-cookie="yes">Accepter</button>
+      <button class="btn small" data-cookie="yes2">Accepter aussi</button>
+      <button class="btn small ghost" data-cookie="no">Refuser</button>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-x" id="modalX" aria-label="Fermer">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Espace client — Orbital Frontiers Technologies</title>
+  <meta name="description" content="Connectez-vous pour consulter ce que nous savons de vous.">
+  <link rel="icon" id="favicon" type="image/jpeg" href="Gemini_Generated_Image_9hmils9hmils9hmi.jpg">
+  <link rel="apple-touch-icon" href="Gemini_Generated_Image_9hmils9hmils9hmi.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="espace-client.css">
+</head>
+<body>
+  <canvas id="stars" aria-hidden="true"></canvas>
+
+  <div id="reticle" aria-hidden="true">
+    <div class="ret-ring"></div>
+    <div class="ret-cross"></div>
+    <span class="ret-label" id="retLabel">LAT 00.00° · LON 00.00°</span>
+  </div>
+
+  <header class="topbar">
+    <a class="logo" href="index.html">
+      <span class="logo-mark"><img src="Gemini_Generated_Image_9hmils9hmils9hmi.jpg" alt=""></span>
+      <span>Orbital Frontiers<small>Technologies</small></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#solutions">Solutions</a>
+      <a href="index.html#fondateur">Fondateur</a>
+      <a href="espace-client.html" class="active" aria-current="page">Espace client</a>
+    </nav>
+    <div class="live-pill"><span class="dot"></span><span class="long">Vous êtes en direct</span><span class="short">Live</span></div>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </header>
+
+  <main>
+    <!-- BANNIÈRE -->
+    <div class="banner">
+      <img src="Gemini_Generated_Image_5p38845p38845p38.jpg" alt="Orbital Frontiers Technologies — Innovation spatiale et solutions avancées">
+      <div class="scanline"></div>
+      <div class="hud hud-tl"><span class="rec">● REC</span> CAM-12 // ESPACE CLIENT</div>
+      <div class="hud hud-tr" id="heroClock">--/--/---- --:--:--</div>
+      <div class="hud hud-br">CONNEXION CHIFFRÉE : NON</div>
+    </div>
+
+    <!-- PROFIL -->
+    <div class="profile">
+      <div class="avatar-wrap">
+        <span class="logo-mark avatar"><img src="Gemini_Generated_Image_9hmils9hmils9hmi.jpg" alt="Logo Orbital Frontiers : le Visionnaire"></span>
+        <span class="avatar-dot" title="En ligne (toujours)"></span>
+      </div>
+      <p class="kicker">// Portail sécurisé* · *pas vraiment</p>
+      <h1>Espace Citoyen Observé</h1>
+      <p class="lead">Connectez-vous pour consulter ce que nous savons de vous. Ou ne vous connectez pas : on le sait quand même.</p>
+      <div class="chips">
+        <span class="chip">🛰 SAT-84 assigné · alt. 21430 km</span>
+        <span class="chip">👁 Observé·e depuis 2019</span>
+        <span class="chip warn">🔓 Chiffrement : en option (désactivée)</span>
+      </div>
+    </div>
+
+    <!-- PORTAIL -->
+    <div class="portal">
+      <form class="panel login" id="loginForm" novalidate autocomplete="off">
+        <div class="tabs" role="tablist">
+          <button type="button" class="tab active" role="tab" aria-selected="true">Connexion</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" id="signupTab">Créer un compte</button>
+        </div>
+
+        <div class="field">
+          <label for="loginId">Identifiant</label>
+          <input type="text" id="loginId" placeholder="votre@email.com (on l’a déjà)" spellcheck="false">
+          <p class="hint" id="idHint" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="loginPw">Mot de passe</label>
+          <div class="input-row">
+            <input type="text" id="loginPw" placeholder="Choisissez-le bien. On le lira." spellcheck="false">
+            <button type="button" class="reveal" id="revealBtn">Masquer</button>
+          </div>
+          <ul class="rules" id="rules" aria-live="polite"></ul>
+          <p class="pw-final" id="pwFinal" aria-live="polite"></p>
+        </div>
+
+        <div class="robot" id="robot">
+          <button type="button" class="robot-check" id="robotBtn"><span class="box"></span>Je ne suis pas un robot</button>
+          <span class="robot-brand">OrbitCAPTCHA™<br>Confidentialité · Non</span>
+        </div>
+
+        <label class="remember"><input type="checkbox" checked disabled> Rester connecté·e (pour toujours)</label>
+
+        <button class="btn primary block" type="submit">Se connecter</button>
+        <button class="link forgot" type="button" id="forgotBtn">Mot de passe oublié ?</button>
+
+        <div class="divider">ou se connecter avec</div>
+        <div class="alt-logins">
+          <button type="button" class="btn small alt" id="faceBtn"><span>🙂</span>Visage</button>
+          <button type="button" class="btn small alt" id="fingerBtn"><span>☝️</span>Empreinte</button>
+          <button type="button" class="btn small alt" id="pigeonBtn"><span>🐦</span>Pigeon voyageur</button>
+        </div>
+      </form>
+
+      <div class="side">
+        <section class="panel">
+          <p class="kicker">// Comparatif</p>
+          <h2 class="panel-title">Pourquoi créer un compte ?</h2>
+          <table class="compare">
+            <thead><tr><th></th><th>Sans compte</th><th>Avec compte</th></tr></thead>
+            <tbody>
+              <tr><td>Être surveillé·e</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+              <tr><td>Le savoir</td><td class="c no">✗</td><td class="c yes">✓</td></tr>
+              <tr><td>Satellite personnel</td><td class="c yes">✓</td><td class="c yes">✓ + Bernard</td></tr>
+              <tr><td>Accès à votre dossier</td><td class="c no">✗</td><td class="c no">✗ classifié</td></tr>
+              <tr><td>Supprimer son compte</td><td class="c no">✗</td><td class="c no">✗</td></tr>
+              <tr><td>Newsletter</td><td class="c yes">✓</td><td class="c yes">✓✓✓</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="panel">
+          <p class="kicker">// État des services · temps réel</p>
+          <h2 class="panel-title">Tout fonctionne (contre vous)</h2>
+          <ul class="status-list">
+            <li><span>SAT-A1</span><span class="st ok">Opérationnel</span></li>
+            <li><span>SAT-84</span><span class="st ok">Vous observe en ce moment</span></li>
+            <li><span>SAT-B3</span><span class="st warn">Pause café</span></li>
+            <li><span>Bernard (pigeon)</span><span class="st ok">En vol vers votre balcon</span></li>
+            <li><span>Serveurs</span><span class="st ok">Dans le cloud (le vrai)</span></li>
+            <li><span>Votre vie privée</span><span class="st down">Panne prolongée depuis 2019</span></li>
+          </ul>
+          <p class="uptime mono">Disponibilité de la surveillance : <b>100,000 %</b> · Dernier incident : <b>jamais</b></p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="foot-inner">
+      <div>
+        <a class="logo" href="index.html">
+          <span class="logo-mark big"><img src="Gemini_Generated_Image_9hmils9hmils9hmi.jpg" alt=""></span>
+          <span>Orbital Frontiers<small>Technologies</small></span>
+        </a>
+        <p class="muted">Innovation spatiale, solutions avancées et regard insistant depuis 2019.</p>
+      </div>
+      <div class="foot-links">
+        <a class="link" href="index.html">Accueil</a>
+        <a class="link" href="index.html#solutions">Solutions</a>
+        <a class="link" href="index.html#fondateur">Fondateur</a>
+      </div>
+    </div>
+    <p class="fine">© 2026 Orbital Frontiers Technologies — Tous droits réservés, les vôtres aussi.<br>
+      Ce site est une parodie. Rien de ce que vous tapez ici ne quitte votre navigateur. Mais avouez que vous avez hésité.</p>
+  </footer>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <button class="modal-x" id="modalX" aria-label="Fermer">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="espace-client.js"></script>
+</body>
+</html>
